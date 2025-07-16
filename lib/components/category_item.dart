@@ -11,9 +11,8 @@ class CategoryItem extends StatelessWidget {
   }) : super(key: key);
 
   void _selectCategory(BuildContext context) {
-    Navigator.of(context).pushNamed(
-        AppRoutes.CATEGORIES_MEALS,
-        arguments: category);
+    Navigator.of(context)
+        .pushNamed(AppRoutes.CATEGORIES_MEALS, arguments: category);
   }
 
   @override
@@ -32,7 +31,7 @@ class CategoryItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(15),
           gradient: LinearGradient(
             colors: [
-              category.color.withOpacity(0.5),
+              category.color.withValues(alpha: 0.5),
               category.color,
             ],
             begin: Alignment.topLeft,
