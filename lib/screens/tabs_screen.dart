@@ -34,26 +34,26 @@ class _TabsScreenState extends State<TabsScreen> {
       appBar: AppBar(
         centerTitle: true,
         foregroundColor: Colors.white,
-        backgroundColor: const Color.fromARGB(255, 48, 12, 24),
+        backgroundColor: Theme.of(context).colorScheme.primary,
         title: Text(_screens[_selectedScreenIndex]['title'] as String),
       ),
       drawer: MainDrawer(),
       body: _screens[_selectedScreenIndex]['screen'] as Widget,
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: const Color.fromARGB(255, 48, 12, 24),
+        backgroundColor: Theme.of(context).colorScheme.primary,
         selectedItemColor: Colors.pink,
-        unselectedItemColor: Colors.white,
+        unselectedItemColor: const Color.fromARGB(255, 109, 0, 56),
         currentIndex: _selectedScreenIndex,
         onTap: _selectScreen,
         type: BottomNavigationBarType.shifting,
         items: const [
           BottomNavigationBarItem(
-            backgroundColor: Color.fromARGB(255, 48, 12, 24),
+            backgroundColor: Color.fromARGB(255, 255, 199, 231),
             icon: Icon(Icons.category),
             label: 'Categorias',
           ),
           BottomNavigationBarItem(
-            backgroundColor: Color.fromARGB(255, 48, 12, 24),
+            backgroundColor: Color.fromARGB(255, 255, 199, 231),
             icon: Icon(Icons.star),
             label: 'Favoritos',
           ),

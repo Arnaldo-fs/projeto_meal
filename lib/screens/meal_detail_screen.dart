@@ -19,7 +19,7 @@ class MealDetailScreen extends StatelessWidget {
       padding: EdgeInsets.all(10),
       margin: EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: const Color.fromARGB(255, 255, 255, 255),
         border: Border.all(color: Colors.grey),
         borderRadius: BorderRadius.circular(10),
       ),
@@ -64,7 +64,8 @@ class MealDetailScreen extends StatelessWidget {
               ),
             ),
             _createSectionTitle(context, 'Passos'),
-            _createSectionContainer(ListView.builder(
+            _createSectionContainer(
+              ListView.builder(
                 itemCount: meal.steps.length,
                 itemBuilder: (ctx, index) {
                   return Column(
@@ -78,9 +79,17 @@ class MealDetailScreen extends StatelessWidget {
                       Divider(),
                     ],
                   );
-                }))
+                },
+              ),
+            )
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.star),
+        onPressed: () {
+          Navigator.of(context).pop(meal.title);
+        },
       ),
     );
   }
